@@ -41,6 +41,7 @@ public class MainActivity extends ActionBarActivity {
         rate = (EditText)findViewById(R.id.editText2);
         futureval = (EditText)findViewById(R.id.EditText01);
         Button cal = (Button)findViewById(R.id.button1);
+        cal.setEnabled(false);
         final Spinner spnr = (Spinner) findViewById(R.id.spinner1);
        
         ArrayAdapter<String> adapter = new ArrayAdapter<String>(
@@ -63,6 +64,7 @@ public class MainActivity extends ActionBarActivity {
     
         Double r =  Double.parseDouble(rate.getText().toString());
         int a =  Integer.parseInt(rate.getText().toString());
+        cal.setEnabled(true);
         CalcEngine fv = new CalcEngine(a, years,r);
         double futurval = fv.getFv();
         futureval.setText(Double.toString(futurval));
